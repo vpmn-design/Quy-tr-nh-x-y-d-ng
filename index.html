@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quy Trình Thi Công Xây Dựng Nhà — Chuẩn Việt Nam</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+
+  :root {
+    --concrete: #2C2C2C;
+    --steel: #4A5568;
+    --rebar: #B7791F;
+    --cement: #F5F0E8;
+    --lime: #FAFAF7;
+    --caution: #E53E3E;
+    --safe: #276749;
+    --warn: #D97706;
+    --accent: #C05621;
+    --muted: #718096;
+    --border: #E2D9C8;
+    --card: #FFFFFF;
+    --tag-bg: #FEF3C7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--lime);
+    color: var(--concrete);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--concrete);
+    color: #fff;
+    padding: 64px 40px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,255,255,.03) 8px,
+      rgba(255,255,255,.03) 16px
+    );
+  }
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rebar);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 680px;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,.65);
+    font-size: 15px;
+    max-width: 520px;
+    font-weight: 300;
+  }
+  .hero-meta {
+    margin-top: 32px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-size: 12px;
+    color: rgba(255,255,255,.5);
+    font-weight: 500;
+    letter-spacing: .5px;
+  }
+  .meta-item span {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--rebar);
+    margin-bottom: 2px;
+  }
+
+  /* ── LEGEND ── */
+  .legend-bar {
+    background: var(--cement);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .legend-bar span { font-size: 12px; font-weight: 600; color: var(--steel); }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: .3px;
+  }
+  .badge-do { background: #FEE2E2; color: var(--caution); }
+  .badge-ne { background: #FEF3C7; color: var(--warn); }
+  .badge-co { background: #D1FAE5; color: var(--safe); }
+  .badge-loi { background: #EDE9FE; color: #5B21B6; }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin: 36px 0 0;
+  }
+  .toc h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 6px 24px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid #F3EDE0;
+    text-decoration: none;
+    color: var(--concrete);
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: color .2s;
+  }
+  .toc-item:hover { color: var(--accent); }
+  .toc-num {
+    min-width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--concrete);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── PHASE SECTION ── */
+  .phase {
+    margin-top: 48px;
+  }
+  .phase-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--concrete);
+  }
+  .phase-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: var(--concrete);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .phase-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .phase-title p {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* ── STEP CARD ── */
+  .step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .step-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+    background: var(--card);
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+  }
+  .step-num {
+    width: 56px;
+    min-height: 64px;
+    background: var(--concrete);
+    color: var(--rebar);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-title {
+    padding: 18px 20px;
+  }
+  .step-title h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .step-title p {
+    font-size: 12.5px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .step-body {
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── INFO GRIDS ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 18px 0;
+  }
+  @media(max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+
+  .info-box {
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .info-box h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .info-box ul { list-style: none; }
+  .info-box li {
+    font-size: 13px;
+    line-height: 1.55;
+    padding: 3px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+  .info-box li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+
+  .box-do { background: #FFF5F5; border-left: 3px solid var(--caution); }
+  .box-do h4 { color: var(--caution); }
+  .box-co { background: #F0FFF4; border-left: 3px solid var(--safe); }
+  .box-co h4 { color: var(--safe); }
+  .box-loi { background: #F5F3FF; border-left: 3px solid #7C3AED; }
+  .box-loi h4 { color: #7C3AED; }
+  .box-warn { background: #FFFBEB; border-left: 3px solid var(--warn); }
+  .box-warn h4 { color: var(--warn); }
+
+  .full-width { grid-column: 1 / -1; }
+
+  /* ── STANDARD TAGS ── */
+  .std-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 0;
+  }
+  .std-tag {
+    background: var(--tag-bg);
+    color: #92400E;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: .3px;
+  }
+
+  /* ── PROCESS DETAIL ── */
+  .process-detail {
+    margin: 16px 0 0;
+    font-size: 13.5px;
+    color: var(--steel);
+    line-height: 1.8;
+  }
+  .process-detail strong { color: var(--concrete); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--concrete);
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 28px;
+    margin-top: 60px;
+    font-size: 12px;
+  }
+  footer strong { color: var(--rebar); }
+
+  /* ── PRINT ── */
+  @media print {
+    .hero { padding: 30px; }
+    .step { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">GreenHN — Tài liệu kỹ thuật nội bộ</div>
+  <h1>Quy Trình Thi Công Xây Dựng Nhà Chuẩn Việt Nam</h1>
+  <p class="hero-sub">Từng bước chi tiết · Làm được gì / Không làm bị gì · Lỗi thường gặp · Tiêu chuẩn TCVN áp dụng</p>
+  <div class="hero-meta">
+    <div class="meta-item"><span>12</span>Giai đoạn thi công</div>
+    <div class="meta-item"><span>40+</span>Bước chi tiết</div>
+    <div class="meta-item"><span>TCVN</span>Tiêu chuẩn áp dụng</div>
+    <div class="meta-item"><span>2026</span>Phiên bản cập nhật</div>
+  </div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <span>Chú thích:</span>
+  <div class="badge badge-co">✓ Làm đúng → được gì</div>
+  <div class="badge badge-do">✗ Không làm → bị gì</div>
+  <div class="badge badge-loi">⚡ Lỗi thường gặp</div>
+  <div class="badge badge-ne">📋 Tiêu chuẩn áp dụng</div>
+</div>
+
+<div class="container">
+
+<!-- TOC -->
+<div class="toc">
+  <h2>Mục lục quy trình</h2>
+  <div class="toc-grid">
+    <a class="toc-item" href="#phase1"><div class="toc-num">1</div>Chuẩn bị pháp lý & Hồ sơ thiết kế</a>
+    <a class="toc-item" href="#phase2"><div class="toc-num">2</div>Khảo sát & Chuẩn bị công trường</a>
+    <a class="toc-item" href="#phase3"><div class="toc-num">3</div>Thi công móng</a>
+    <a class="toc-item" href="#phase4"><div class="toc-num">4</div>Thi công tầng hầm (nếu có)</a>
+    <a class="toc-item" href="#phase5"><div class="toc-num">5</div>Thi công kết cấu thô (dầm, cột, sàn)</a>
+    <a class="toc-item" href="#phase6"><div class="toc-num">6</div>Xây tường & Trát</a>
+    <a class="toc-item" href="#phase7"><div class="toc-num">7</div>Hệ thống MEP (Điện – Nước – PCCC)</a>
+    <a class="toc-item" href="#phase8"><div class="toc-num">8</div>Chống thấm & Chống nóng</a>
+    <a class="toc-item" href="#phase9"><div class="toc-num">9</div>Hoàn thiện nội thất</a>
+    <a class="toc-item" href="#phase10"><div class="toc-num">10</div>Lắp đặt thiết bị & Cửa</a>
+    <a class="toc-item" href="#phase11"><div class="tto-item" href="#phase11"><div class="toc-num">11</div>Hoàn thiện ngoại thất</a>
+    <a class="toc-item" href="#phase12"><div class="toc-num">12</div>Nghiệm thu & Bàn giao</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 1 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase1">
+  <div class="phase-header">
+    <div class="phase-icon">📄</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 1 — Chuẩn bị pháp lý & Hồ sơ thiết kế</h2>
+      <p>Nền tảng pháp lý của toàn bộ công trình — không thể bỏ qua</p>
+    </div>
+  </div>
+
+  <!-- B1 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">01</div>
+      <div class="step-title">
+        <h3>Kiểm tra pháp lý đất & Xin phép xây dựng</h3>
+        <p>Sổ đỏ/sổ hồng, quy hoạch sử dụng đất, giấy phép xây dựng</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Xác minh tình trạng pháp lý thửa đất (không tranh chấp, không quy hoạch thu hồi). Nộp hồ sơ xin giấy phép xây dựng tại Phòng Quản lý đô thị quận/huyện. Hồ sơ gồm: <strong>đơn xin phép, bản sao sổ đỏ, bản vẽ kiến trúc (4 bộ), hợp đồng thiết kế, chứng chỉ hành nghề của đơn vị thiết kế</strong>.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Thi công hợp pháp, không bị đình chỉ</li>
+            <li>Được kết nối điện, nước chính thức</li>
+            <li>Bán/chuyển nhượng nhà dễ dàng</li>
+            <li>Ngân hàng cho vay thế chấp</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Phạt 30–1.000 triệu đồng (Nghị định 16/2022)</li>
+            <li>Buộc tháo dỡ phần vi phạm</li>
+            <li>Không hợp thức hóa được nhà</li>
+            <li>Tranh chấp, kiện tụng kéo dài</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Xây vượt tầng, vượt diện tích so với phép</li>
+            <li>Không kiểm tra chỉ giới đường đỏ dẫn đến phá dỡ</li>
+            <li>Dùng bản vẽ không có đóng dấu thẩm duyệt</li>
+            <li>Quên gia hạn giấy phép khi công trình kéo dài</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">Luật Xây dựng 50/2014/QH13</span>
+        <span class="std-tag">Nghị định 15/2021/NĐ-CP</span>
+        <span class="std-tag">Nghị định 16/2022/NĐ-CP (xử phạt)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- B2 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">02</div>
+      <div class="step-title">
+        <h3>Lập hồ sơ thiết kế kỹ thuật thi công</h3>
+        <p>Bản vẽ kết cấu, kiến trúc, MEP đầy đủ trước khi đổ bê tông</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Bộ hồ sơ bao gồm: <strong>bản vẽ kiến trúc, kết cấu, điện-nước-PCCC, bảng thống kê vật liệu, thuyết minh thiết kế, dự toán khái quát</strong>. Đơn vị thiết kế phải có chứng chỉ hành nghề phù hợp với cấp công trình.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Thi công đúng quy cách, tránh phát sinh</li>
+            <li>Dễ kiểm soát chi phí và tiến độ</li>
+            <li>Cơ sở để nghiệm thu và thanh toán</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Đổ sai vị trí thép, phải đập phá tốn kém</li>
+            <li>Phát sinh chi phí ngoài dự toán 20–40%</li>
+            <li>Đội thợ thiếu cơ sở để làm, sai đến đâu sửa đến đó</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Bản vẽ kiến trúc không khớp với bản vẽ kết cấu</li>
+            <li>Thiếu bố trí hộp kỹ thuật dẫn đến đục tường MEP sau này</li>
+            <li>Không có thuyết minh kết cấu, thợ tự ý thay đổi thép</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9386:2012 (thiết kế kháng chấn)</span>
+        <span class="std-tag">TCVN 2737:2023 (tải trọng)</span>
+        <span class="std-tag">QCVN 06:2022/BXD (PCCC)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 2 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase2">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🔍</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 2 — Khảo sát & Chuẩn bị công trường</h2>
+      <p>Khảo sát địa chất, san lấp, rào che, cấp điện nước tạm</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">03</div>
+      <div class="step-title">
+        <h3>Khảo sát địa chất công trình</h3>
+        <p>Khoan thăm dò nền đất, lấy mẫu thí nghiệm</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Thực hiện khoan thăm dò địa chất ít nhất <strong>2–4 hố khoan</strong> (tùy quy mô công trình). Thí nghiệm SPT tại các độ sâu theo TCVN 9351. Kết quả phục vụ thiết kế móng (loại móng, độ sâu chôn móng, tải trọng cho phép).
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Chọn đúng loại móng phù hợp địa chất</li>
+            <li>Tránh lún lệch, nứt kết cấu về sau</li>
+            <li>Tiết kiệm chi phí móng không cần thiết</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Gặp lớp đất yếu không lường trước</li>
+            <li>Nứt tường, lún móng, phải gia cố tốn kém</li>
+            <li>Nguy hiểm kết cấu toàn công trình</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Bỏ qua khảo sát ở nhà phố nhỏ → gặp túi bùn, cát chảy</li>
+            <li>Khoan không đủ độ sâu yêu cầu (cần ≥ 20m ở TP.HCM)</li>
+            <li>Không thí nghiệm mẫu đất tại phòng lab</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9351:2012 (thí nghiệm hiện trường)</span>
+        <span class="std-tag">TCVN 9362:2012 (nền nhà và công trình)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">04</div>
+      <div class="step-title">
+        <h3>Chuẩn bị mặt bằng công trường</h3>
+        <p>Rào che, san lấp, cấp điện nước tạm, nhà vệ sinh công nhân</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Dựng rào chắn tôn bao quanh công trường (bắt buộc theo QCXDVN). Lắp bảng thông tin công trình ngoài hàng rào. Cấp điện thi công qua đồng hồ điện tạm. Xây hố tự hoại tạm hoặc đặt nhà vệ sinh di động cho công nhân.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Thi công an toàn, tránh tai nạn</li>
+            <li>Không bị phạt vi phạm vệ sinh môi trường</li>
+            <li>Hàng xóm không khiếu kiện, cản trở</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Bụi đất, vật liệu rơi gây tai nạn</li>
+            <li>Bị đình công trình do vi phạm hành chính</li>
+            <li>Đất cát tràn ra đường bị phạt</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không cắm biển thông tin công trình (bắt buộc theo Thông tư 10/2013)</li>
+            <li>Đổ bê tông làm bẩn đường không vệ sinh</li>
+            <li>Thiếu đèn chiếu sáng thi công ban đêm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 3 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase3">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">⚓</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 3 — Thi công Móng</h2>
+      <p>Phần quyết định sự ổn định lâu dài của công trình</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">05</div>
+      <div class="step-title">
+        <h3>Định vị & Đào hố móng</h3>
+        <p>Trắc đạc, đặt mốc, đào đất đúng cao độ thiết kế</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Dùng máy kinh vĩ/máy toàn đạc định vị tim cột, tim móng theo bản vẽ. Đào hố móng đến <strong>cao độ đáy móng thiết kế</strong> (không được đào quá sâu rồi bù đất). Kiểm tra địa chất thực tế khi đào để đối chiếu với khảo sát.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Móng đặt đúng vị trí, đúng tải trọng thiết kế</li>
+            <li>Không bị lệch tim cột, lệch kết cấu bên trên</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Lệch tim móng cả chục cm, phải đập làm lại</li>
+            <li>Đào quá sâu, đổ bê tông bù giá thành đắt và yếu</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không dùng máy trắc đạc, căng dây bằng mắt — sai lệch ±5cm</li>
+            <li>Đào xong để quá lâu không đổ bê tông, đất ướt mất kết cấu</li>
+            <li>Không chắn giữ thành hố khi đất yếu → sụt lở nguy hiểm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">06</div>
+      <div class="step-title">
+        <h3>Ép cọc / Đóng cọc (nếu có)</h3>
+        <p>Cọc bê tông cốt thép, cọc khoan nhồi theo thiết kế</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Với nền đất yếu (đặc trưng TP.HCM), cọc ép thường dùng cọc BTCT tiết diện <strong>250×250 hoặc 300×300mm</strong>. Chiều dài cọc và tải trọng ép theo hồ sơ thiết kế. Sau khi ép, thực hiện thử tải tĩnh ít nhất <strong>1% số cọc</strong>.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Cọc đạt tải thiết kế, không lún</li>
+            <li>Có hồ sơ nghiệm thu cọc làm cơ sở bảo hành</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Cọc không đạt độ sâu, lún chênh lệch</li>
+            <li>Không có cơ sở pháp lý khi tranh chấp</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Ép đến áp lực nhưng chưa đủ độ sâu thiết kế → dừng sai</li>
+            <li>Đầu cọc bị gãy khi ép không được phát hiện</li>
+            <li>Cọc bị lệch >5cm so với tim thiết kế không xử lý</li>
+            <li>Thiếu nhật ký ép cọc từng vị trí</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 10304:2014 (móng cọc)</span>
+        <span class="std-tag">TCVN 9393:2012 (ép cọc thử tải)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">07</div>
+      <div class="step-title">
+        <h3>Đổ bê tông lót & Thi công đài móng, giằng móng</h3>
+        <p>Bê tông lót M100, đài móng M200–M300, giằng móng</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Đổ <strong>bê tông lót M100, dày 100mm</strong> toàn bộ đáy móng. Sau khi bê tông lót đủ cứng (≥12 giờ), tiến hành buộc cốt thép đài móng theo bản vẽ. Lắp ván khuôn, đổ bê tông đài + giằng móng cùng đợt. Bảo dưỡng ẩm liên tục ≥7 ngày.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Đài móng đạt cường độ thiết kế</li>
+            <li>Lớp bê tông bảo vệ thép đúng (≥75mm với móng)</li>
+            <li>Không thấm nước từ đất vào đài</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Không bê tông lót → đất bẩn trộn vào đáy đài, yếu</li>
+            <li>Đổ không liên tục → mạch ngừng thi công → nứt</li>
+            <li>Không bảo dưỡng → bê tông co ngót, nứt bề mặt</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Dùng bê tông trộn tay thay vì trạm trộn → chất lượng kém, không đồng đều</li>
+            <li>Đổ bê tông lúc trời mưa to không che chắn → loãng xi măng bề mặt</li>
+            <li>Cốt thép không đủ lớp bảo vệ → gỉ sét, nứt vỡ sau 5–10 năm</li>
+            <li>Tháo ván khuôn sớm trước 24h → bê tông chưa đủ cứng, biến dạng</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 4453:1995 (bê tông toàn khối)</span>
+        <span class="std-tag">TCVN 5574:2018 (kết cấu BTCT)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 4 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase4">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🏗️</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 4 — Tầng hầm (nếu có)</h2>
+      <p>Tường vây, chống thấm, hệ thống thoát nước ngầm</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">08</div>
+      <div class="step-title">
+        <h3>Thi công tường vây & Chống thấm tầng hầm</h3>
+        <p>Tường cừ, tường barrette hoặc cọc đất trộn xi măng</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Tầng hầm ở TP.HCM đặc biệt phức tạp do mực nước ngầm cao. Hệ tường vây phải thi công trước khi đào đất. Chống thấm tầng hầm yêu cầu <strong>3 lớp</strong>: màng chống thấm dán nóng + bê tông chống thấm (phụ gia Sika/Kryton) + vữa chống thấm quét trong.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Tầng hầm khô ráo, dùng được xe ô tô</li>
+            <li>Không ảnh hưởng nền móng lân cận</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Thấm nước nghiêm trọng, không thể sửa chữa triệt để</li>
+            <li>Sụt lún nhà hàng xóm, kiện tụng bồi thường</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Chỉ dùng 1 lớp chống thấm quét trong → không đủ với áp lực nước ngầm TP.HCM</li>
+            <li>Không bịt kín khe co giãn tường — nước chảy vào theo khe</li>
+            <li>Không hút nước ngầm khi đào → đất sụt vào hố đào</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9065:2012 (chống thấm công trình)</span>
+        <span class="std-tag">TCVN 10861:2015 (hầm chứa xe)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 5 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase5">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🔩</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 5 — Kết cấu thô (Cột – Dầm – Sàn)</h2>
+      <p>Xương cốt của công trình — yêu cầu nghiệm thu từng bước</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">09</div>
+      <div class="step-title">
+        <h3>Gia công & Lắp đặt cốt thép cột, dầm, sàn</h3>
+        <p>Uốn, buộc, lắp đúng bản vẽ — nghiệm thu trước khi đổ</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Thép phải có <strong>chứng chỉ xuất xứ, kiểm tra đường kính thực tế</strong> (thép CB300V, CB400V theo TCVN 1651). Buộc thép đúng khoảng cách, đảm bảo lớp bảo vệ bê tông (cột: 25–30mm, dầm: 25mm, sàn: 20mm). Nghiệm thu cốt thép trước khi lắp ván khuôn.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Kết cấu đạt tải trọng thiết kế chính xác</li>
+            <li>Tuổi thọ công trình 50+ năm</li>
+            <li>Không nứt, không võng sàn</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Thiếu thép hoặc thép kém → nguy hiểm kết cấu</li>
+            <li>Sàn nứt, võng, thấm nước</li>
+            <li>Không đủ cơ sở nghiệm thu giai đoạn</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Dùng thép không rõ nguồn gốc, thiếu ký hiệu nhà sản xuất</li>
+            <li>Bỏ thép râu (thép chờ) ở vị trí cần nối tầng sau</li>
+            <li>Lớp bảo vệ bê tông không đủ → gỉ thép sau 5–10 năm</li>
+            <li>Không buộc con kê đỡ thép → thép chìm xuống đáy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 1651-1,2:2018 (thép BTCT)</span>
+        <span class="std-tag">TCVN 5574:2018 (kết cấu BTCT)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">10</div>
+      <div class="step-title">
+        <h3>Lắp ván khuôn & Đổ bê tông cột, dầm, sàn</h3>
+        <p>Đổ bê tông thương phẩm, đầm dùi, bảo dưỡng đúng quy trình</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Sử dụng <strong>bê tông thương phẩm trạm trộn</strong> (M250–M350 tùy cấu kiện). Lấy mẫu bê tông thí nghiệm (tối thiểu 1 mẫu tổ 3 viên / 20m³). Đầm dùi đảm bảo không còn bọt khí. Bảo dưỡng ẩm bằng bao tải/nước tưới ≥7 ngày sau đổ. Tháo ván khuôn sàn sau ≥28 ngày hoặc khi đạt 70% cường độ thiết kế.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Bê tông đặc chắc, không rỗng, đạt cường độ</li>
+            <li>Có số liệu thí nghiệm làm cơ sở nghiệm thu</li>
+            <li>Bề mặt phẳng, dễ trát sau này</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Bê tông rỗ, yếu — phải đục ra vá lại tốn kém</li>
+            <li>Không có phiếu thí nghiệm → không qua nghiệm thu</li>
+            <li>Tháo ván khuôn sớm → sàn bị võng không phục hồi được</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Cho thêm nước vào xe bê tông → giảm cường độ nghiêm trọng</li>
+            <li>Không đầm dùi đủ → bê tông rỗng bên trong</li>
+            <li>Đổ khi trời nắng gắt không che → bê tông bề mặt nứt ngay sau đổ</li>
+            <li>Để bê tông cách vị trí đổ >1.5m → phân tầng cốt liệu</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 4453:1995 (thi công bê tông)</span>
+        <span class="std-tag">TCVN 3105:2022 (lấy mẫu bê tông)</span>
+        <span class="std-tag">TCVN 3118:2022 (thử nén bê tông)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 6 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase6">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🧱</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 6 — Xây tường & Trát</h2>
+      <p>Tường gạch, hệ lam, trát xi măng cát chuẩn độ dày</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">11</div>
+      <div class="step-title">
+        <h3>Xây tường gạch (tường bao, tường ngăn)</h3>
+        <p>Gạch nung/gạch bê tông nhẹ, mạch vữa đều, đặt thép giằng</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Tường ngoài: gạch nung 2 lỗ hoặc gạch bê tông nhẹ. Tường ngăn: có thể dùng tấm thạch cao, gạch bê tông nhẹ. <strong>Đặt thép giằng 2Ø6 mỗi 500mm chiều cao</strong>. Neo tường vào cột bê tông bằng thép râu d6 mỗi 400mm. Để chờ ống điện, nước trước khi xây.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Tường không nứt, không bong tróc về sau</li>
+            <li>Kết nối tốt với cột, không kẽ hở</li>
+            <li>Bề mặt phẳng, dễ trát ít tốn vữa</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Nứt chân tường, nứt góc tường-cột</li>
+            <li>Xây sau khi trát mới đục ống nước → nứt vữa trát</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không tưới nước gạch trước khi xây → gạch hút nước vữa nhanh, mạch yếu</li>
+            <li>Không đặt thép giằng → nứt xiên 45° tại lỗ cửa</li>
+            <li>Xây cao quá 1.5m/ngày → tường lún, cong vênh</li>
+            <li>Không neo tường vào cột → nứt khe tường-cột sau 1–2 năm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 4314:2003 (vữa xây)</span>
+        <span class="std-tag">TCVN 1450:2009 (gạch nung)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">12</div>
+      <div class="step-title">
+        <h3>Trát tường trong & ngoài</h3>
+        <p>2 lớp trát, kiểm tra phẳng bằng thước nhôm 2m</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Đánh nhám mặt bê tông + tưới ẩm trước khi trát. Lớp trát lót (áo): dày 10mm, M75. Lớp trát mặt: dày 5–8mm, M75. Tổng chiều dày ≤20mm. Kiểm tra độ phẳng bằng thước 2m: sai số ≤3mm trát trong, ≤5mm trát ngoài.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Tường phẳng, sơn hoặc ốp đẹp không lồi lõm</li>
+            <li>Không bong tróc vữa sau mưa</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Vữa bong từng mảng sau 1–2 mùa mưa</li>
+            <li>Sơn xong vẫn thấy gợn sóng, lồi lõm</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không đánh nhám mặt bê tông → vữa bong theo mặt bê tông</li>
+            <li>Trát quá dày 1 lớp →  co ngót, nứt chân chim</li>
+            <li>Không bảo dưỡng ẩm sau trát →  vữa khô co nứt bề mặt</li>
+            <li>Trát tường ngoài mùa nắng không che →  khô quá nhanh, bong sớm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9377-1,2:2012 (trát công trình)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 7 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase7">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">⚡</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 7 — Hệ thống MEP (Điện – Nước – PCCC)</h2>
+      <p>Phải làm song song với xây tường, không làm sau khi trát</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">13</div>
+      <div class="step-title">
+        <h3>Hệ thống cấp thoát nước</h3>
+        <p>Ống nước âm tường, thử áp lực, hệ bể ngầm-máy bơm</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Ống cấp nước dùng PPR hoặc PVC PN20. Ống thoát nước dùng PVC TPVC (Bình Minh, Tiền Phong). Hệ thống cấp nước phải <strong>thử áp lực 1.5 lần áp lực làm việc trong 30 phút</strong>. Hệ thống thoát thử kín bằng cách đổ đầy nước kiểm tra.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Không rò rỉ, không thấm ướt tường</li>
+            <li>Thoát nước nhanh, không đọng, không hôi</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Ống bị bịt kín bởi vữa trát, tắc không thông</li>
+            <li>Rò rỉ âm tường phải đục tường sửa tốn kém</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không thử áp lực trước khi trát → phát hiện rò rỉ sau khi ốp gạch</li>
+            <li>Ống thoát không có độ dốc ≥1% → nước đọng, hôi</li>
+            <li>Không bọc bảo vệ ống khi đổ bê tông → bẹp ống</li>
+            <li>Thiếu P-trap (xi phông) → hôi cống vào trong nhà</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9208:2012 (lắp đặt cấp thoát nước)</span>
+        <span class="std-tag">QCVN 01:2021/BXD</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">14</div>
+      <div class="step-title">
+        <h3>Hệ thống điện</h3>
+        <p>Đi ống âm, tủ điện, tiếp địa, thử nghiệm cách điện</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Dây điện dùng <strong>Cu/PVC/PVC chuẩn TCVN 6610</strong>. Mỗi mạch phụ bảo vệ bằng MCB riêng. Hệ thống tiếp địa điện trở ≤4Ω. Sau lắp đặt thử nghiệm: cách điện ≥1MΩ, thông mạch đúng sơ đồ. Tủ điện tổng phải có ELCB (cầu dao chống giật) và CB tổng.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>An toàn điện, không giật, không chập cháy</li>
+            <li>Có hồ sơ hoàn công điện để đăng ký điện lực</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Nguy cơ chập cháy, điện giật gây tử vong</li>
+            <li>Không đạt kiểm tra của điện lực khi đấu nối</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không có tiếp địa hoặc tiếp địa không đo kiểm</li>
+            <li>Đi chung ống điện và nước cùng rãnh tường</li>
+            <li>Dùng dây điện kém chất lượng, không nhãn hiệu</li>
+            <li>Không đủ mạch phụ → CB hay nhảy khi dùng nhiều thiết bị</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9207:2012 (đặt đường dẫn điện)</span>
+        <span class="std-tag">QCVN QTĐ-5:2009/BCT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">15</div>
+      <div class="step-title">
+        <h3>Hệ thống PCCC (Phòng cháy chữa cháy)</h3>
+        <p>Bắt buộc với nhà từ 7 tầng, chung cư mini, nhà cho thuê nhiều phòng</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Theo Nghị định 136/2020/NĐ-CP và QCVN 06:2022/BXD: nhà ở riêng lẻ ≥6 tầng, nhà cho thuê từ 5 phòng, chung cư mini bắt buộc có hệ thống báo cháy tự động, bình chữa cháy, đèn exit, lối thoát nạn theo quy định. Thiết kế PCCC phải được cơ quan PCCC thẩm duyệt và nghiệm thu trước khi đưa vào sử dụng.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>An toàn tính mạng người cư trú</li>
+            <li>Được cấp phép hoạt động kinh doanh</li>
+            <li>Bảo hiểm chi trả khi có sự cố</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Phạt đến 150 triệu (Nghị định 144/2021)</li>
+            <li>Đình chỉ hoạt động, tháo dỡ vi phạm</li>
+            <li>Hình sự nếu xảy ra tai nạn chết người</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp (Rất phổ biến ở TP.HCM)</h4>
+          <ul>
+            <li>Chung cư mini/nhà trọ không có hệ thống báo cháy — vi phạm phổ biến nhất</li>
+            <li>Cầu thang thoát nạn bị che chắn, bố trí không đúng</li>
+            <li>Không nghiệm thu PCCC nhưng vẫn cho thuê → nguy cơ hình sự</li>
+            <li>Bình chữa cháy hết hạn, đặt sai vị trí</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">QCVN 06:2022/BXD</span>
+        <span class="std-tag">Nghị định 136/2020/NĐ-CP</span>
+        <span class="std-tag">TCVN 3890:2023 (PCCC)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 8 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase8">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">💧</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 8 — Chống thấm & Chống nóng</h2>
+      <p>Đặc biệt quan trọng ở khí hậu nhiệt đới TP.HCM</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">16</div>
+      <div class="step-title">
+        <h3>Chống thấm mái, sàn vệ sinh, ban công</h3>
+        <p>3 lớp chống thấm — không được tiết kiệm bước này</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Quy trình chuẩn: <strong>1) Vệ sinh bề mặt, vá lỗ rỗng</strong> → <strong>2) Quét lớp lót tăng bám (primer)</strong> → <strong>3) Quét 2 lớp chống thấm gốc xi măng-polymer (Sika, Kova, Fosroc)</strong> → <strong>4) Thử nghiệm ngâm nước 24h</strong> → <strong>5) Thi công lớp bảo vệ (vữa, gạch lát)</strong>. Mái bằng thêm lớp cách nhiệt (xốp cứng XPS, 5cm).
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Không thấm trong 10+ năm nếu thi công đúng</li>
+            <li>Giảm 3–5°C nhiệt độ phòng tầng trên</li>
+            <li>Bảo vệ kết cấu bê tông khỏi ăn mòn</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Thấm trần, tường ẩm, ảnh hưởng đồ đạc, sức khỏe</li>
+            <li>Thép trong bê tông bị gỉ, nứt vỡ kết cấu dần</li>
+            <li>Chi phí sửa gấp 3–5 lần so với làm đúng ban đầu</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Chỉ quét 1 lớp, không thử ngâm nước → phát hiện rò sau khi ốp gạch</li>
+            <li>Không làm cong lên (coving) ở chân tường-sàn → nước thấm vào góc</li>
+            <li>Không chờ khô hoàn toàn giữa 2 lớp → lớp sau bong</li>
+            <li>Dùng sản phẩm kém chất lượng không rõ xuất xứ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9065:2012 (chống thấm)</span>
+        <span class="std-tag">TCVN 9029:2017 (màng chống thấm)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 9 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase9">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🏠</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 9 — Hoàn thiện nội thất</h2>
+      <p>Ốp lát, sơn, trần thạch cao, cầu thang</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">17</div>
+      <div class="step-title">
+        <h3>Ốp gạch tường & Lát nền</h3>
+        <p>Keo dán, mạch chà, độ bằng phẳng kiểm tra bằng thước</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Dùng keo dán gạch polymer (không dùng vữa xi măng cát cho gạch lớn >60×60). Khoảng cách mạch ≥2mm để co giãn nhiệt. Chà mạch sau ≥24h ốp. Độ bằng phẳng: ≤3mm/2m. Góc tường vuông kiểm tra bằng eke, độ thẳng đứng: ≤2mm/1m.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Gạch bền, không bong, không nứt mạch</li>
+            <li>Thẩm mỹ cao, đường mạch thẳng đều</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Gạch phồng, bong sau 2–3 mùa nóng</li>
+            <li>Đường mạch cong, lệch màu — xấu</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Dùng vữa xi măng cát cho gạch 80×80 → bong sau 1–2 năm do co giãn nhiệt</li>
+            <li>Không để mạch co giãn ở gốc tường-sàn → nứt mạch do nhiệt</li>
+            <li>Keo dán không phủ ≥85% diện tích mặt sau gạch → kêu rỗng</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">18</div>
+      <div class="step-title">
+        <h3>Sơn tường trong & ngoài</h3>
+        <p>Bả matit, lót, sơn 2 lớp — đúng trình tự</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Trình tự: <strong>Bả matit (2–3 lớp, mài phẳng) → Lớp sơn lót → 2 lớp sơn màu</strong>. Sơn ngoài nhà phải dùng sơn ngoại thất (chống UV, chống rêu mốc). Chờ mỗi lớp khô hoàn toàn (4–6h) mới sơn tiếp. Độ ẩm tường ≤16% mới được sơn.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Sơn đẹp, phẳng, màu đều, bền 5–8 năm</li>
+            <li>Chống thấm nhẹ cho tường ngoài</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Sơn bong vảy, đổi màu sau 1 mùa mưa</li>
+            <li>Nổi bong bóng do tường ẩm chưa khô</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Sơn khi tường còn ẩm → bong ngay sau mưa đầu tiên</li>
+            <li>Không bả matit → tường lộ ô gạch, lỗ chỗ</li>
+            <li>Dùng sơn nội thất cho mặt ngoài → bong tróc, rêu mốc nhanh</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9377-3:2012 (sơn hoàn thiện)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 10 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase10">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🚪</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 10 — Lắp đặt thiết bị & Cửa</h2>
+      <p>Cửa nhôm, cửa gỗ, thiết bị vệ sinh, đèn, điều hoà</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">19</div>
+      <div class="step-title">
+        <h3>Lắp cửa (nhôm, gỗ công nghiệp, kính)</h3>
+        <p>Cân bằng, vuông góc, ron cao su kín khít</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Cửa đóng mở êm, không kẹt, kín gió</li>
+            <li>Chống thấm nước mưa tốt</li>
+            <li>Cách âm tốt nếu dùng kính 2 lớp</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Cửa bị vênh, kẹt sau vài tháng</li>
+            <li>Thấm nước mưa qua khe chân cửa</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Lắp không dùng cân bằng laser — cửa lệch, kẹt sau 6 tháng</li>
+            <li>Không trét silicon kín cạnh khung — thấm nước mưa</li>
+            <li>Quên chèn ron cao su hoặc dùng ron kém chất lượng</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">20</div>
+      <div class="step-title">
+        <h3>Lắp thiết bị vệ sinh, điện, điều hoà</h3>
+        <p>Bồn cầu, lavabo, đèn, ổ cắm, điều hoà — kết nối hoàn chỉnh</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Hệ thống hoàn chỉnh, sử dụng ngay</li>
+            <li>Có bảo hành thiết bị đầy đủ</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Lắp điều hoà không có ống thoát nước → rỉ nước vào tường</li>
+            <li>Ổ cắm nhà tắm không dùng loại chống thấm IP44</li>
+            <li>Không siết gioăng bồn cầu đủ lực → rỉ nước đế bồn cầu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 11 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase11">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">🌿</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 11 — Hoàn thiện ngoại thất</h2>
+      <p>Sơn ngoài, ốp đá, lan can, hàng rào, sân vườn</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">21</div>
+      <div class="step-title">
+        <h3>Hoàn thiện mặt tiền, lan can, hàng rào</h3>
+        <p>Sơn giả đá, ốp nhôm composite, sắt hàn sơn tĩnh điện</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Mặt tiền đẹp, ấn tượng, tăng giá trị công trình</li>
+            <li>An toàn lan can (chịu lực theo TCVN)</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Lan can không đủ cứng, nguy hiểm té ngã</li>
+            <li>Mặt tiền bong tróc, ố vàng, rêu mốc</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Lan can cao &lt;1.1m (quy định ≥1.1m với nhà ≥3 tầng)</li>
+            <li>Không sơn chống rỉ sắt lan can trước khi sơn phủ</li>
+            <li>Ốp nhôm composite mặt tiền không thoát nước → ẩm, mốc đen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">TCVN 9386:2012 (tải trọng lan can)</span>
+        <span class="std-tag">QCVN 04:2021/BXD (chiều cao lan can)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- PHASE 12 -->
+<!-- ══════════════════════════════════════ -->
+<div class="phase" id="phase12">
+  <div class="divider"></div>
+  <div class="phase-header" style="margin-top:40px">
+    <div class="phase-icon">✅</div>
+    <div class="phase-title">
+      <h2>Giai đoạn 12 — Nghiệm thu & Bàn giao</h2>
+      <p>Kiểm tra tổng thể, hoàn công, bàn giao hồ sơ</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">22</div>
+      <div class="step-title">
+        <h3>Nghiệm thu hoàn thành công trình</h3>
+        <p>Nghiệm thu từng hạng mục → Nghiệm thu tổng thể → Hoàn công</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Quy trình: <strong>(1) Kiểm tra tổng thể toàn bộ hạng mục</strong> → <strong>(2) Lập biên bản nghiệm thu hoàn thành</strong> → <strong>(3) Nộp hồ sơ hoàn công</strong> (bản vẽ hoàn công, các biên bản nghiệm thu, kết quả thí nghiệm) lên Phòng QLĐT → <strong>(4) Xin xác nhận hoàn công để hợp thức hóa nhà ở</strong>.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Nhà được hợp thức hóa, cấp số nhà</li>
+            <li>Đủ điều kiện bán, cho thuê hợp pháp</li>
+            <li>Có cơ sở xử lý tranh chấp bảo hành</li>
+            <li>Ngân hàng duyệt vay thế chấp</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Không có giấy tờ pháp lý đầy đủ</li>
+            <li>Khó bán, không thế chấp được</li>
+            <li>Vi phạm xây dựng nếu khác phép</li>
+          </ul>
+        </div>
+        <div class="info-box box-loi full-width">
+          <h4>⚡ Lỗi thường gặp</h4>
+          <ul>
+            <li>Không lưu đủ biên bản nghiệm thu từng giai đoạn (kết cấu, MEP)</li>
+            <li>Bản vẽ hoàn công không phản ánh đúng thi công thực tế</li>
+            <li>Không có phiếu thử nghiệm vật liệu (bê tông, thép) trong hồ sơ</li>
+            <li>Công trình thực tế xây khác phép — phải phá dỡ điều chỉnh mới hoàn công được</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">Nghị định 06/2021/NĐ-CP (quản lý chất lượng)</span>
+        <span class="std-tag">Thông tư 26/2016/TT-BXD</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">23</div>
+      <div class="step-title">
+        <h3>Bàn giao & Bảo hành công trình</h3>
+        <p>Biên bản bàn giao, danh mục bảo hành, vận hành hướng dẫn</p>
+      </div>
+    </div>
+    <div class="step-body">
+      <p class="process-detail">
+        Theo Luật Xây dựng: bảo hành tối thiểu <strong>24 tháng với nhà ở</strong> (kể từ ngày bàn giao). Nhà thầu phải khắc phục miễn phí các lỗi phát sinh do thi công trong thời gian bảo hành. Bàn giao kèm: <strong>hồ sơ hoàn công, hướng dẫn vận hành thiết bị, danh sách nhà thầu phụ và liên hệ</strong>.
+      </p>
+      <div class="info-grid">
+        <div class="info-box box-co">
+          <h4>✓ Làm đúng → Được</h4>
+          <ul>
+            <li>Chủ đầu tư có cơ sở yêu cầu sửa chữa miễn phí</li>
+            <li>Tranh chấp bảo hành có hồ sơ giải quyết rõ ràng</li>
+          </ul>
+        </div>
+        <div class="info-box box-do">
+          <h4>✗ Không làm → Bị</h4>
+          <ul>
+            <li>Không có cơ sở pháp lý yêu cầu nhà thầu bảo hành</li>
+            <li>Sự cố không biết liên hệ ai xử lý</li>
+          </ul>
+        </div>
+      </div>
+      <div class="std-tags">
+        <span class="std-tag">Điều 126, Luật Xây dựng 2014 (bảo hành)</span>
+        <span class="std-tag">Nghị định 06/2021/NĐ-CP</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+</div><!-- end container -->
+
+<footer>
+  Tài liệu kỹ thuật nội bộ · <strong>GreenHN</strong> · Chi nhánh phía Nam TP.HCM · Cập nhật 2026
+  <br><span style="font-size:11px; margin-top:4px; display:block;">Tham chiếu: TCVN, QCVN, Luật Xây dựng 50/2014/QH13 và các nghị định hướng dẫn</span>
+</footer>
+
+</body>
+</html>
